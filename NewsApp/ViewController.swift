@@ -16,40 +16,40 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.title = "PAGE MENU"
-        self.navigationController?.navigationBar.barTintColor = UIColor(red: 30.0/255.0, green: 30.0/255.0, blue: 30.0/255.0, alpha: 1.0)
+        self.title = "NEWS"
+        self.navigationController?.navigationBar.barTintColor = UIColor.whiteColor()
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.orangeColor()]
         
         var controllerArray: [UIViewController] = []
         
-        var controller1: UIViewController = UIViewController(nibName: "TableViewController", bundle: nil)
-        controller1.title = "SAMPLE TITLE"
+        let controller1: UIViewController = UIViewController(nibName: "TableViewController", bundle: nil)
+        controller1.title = "iOS"
         controllerArray.append(controller1)
         
-        var controller2: UIViewController = UIViewController(nibName: "TableViewController", bundle: nil)
-        controller2.title = "SAMPLE TITLE"
+        let controller2: UIViewController = UIViewController(nibName: "TableViewController", bundle: nil)
+        controller2.title = "Rails"
         controllerArray.append(controller2)
         
-        var controller3: UIViewController = UIViewController(nibName: "TableViewController", bundle: nil)
-        controller3.title = "SAMPLE TITLE"
+        let controller3: UIViewController = UIViewController(nibName: "TableViewController", bundle: nil)
+        controller3.title = "AWS"
         controllerArray.append(controller3)
         
-        var controller4: UIViewController = UIViewController(nibName: "TableViewController", bundle: nil)
-        controller4.title = "SAMPLE TITLE"
+        let controller4: UIViewController = UIViewController(nibName: "TableViewController", bundle: nil)
+        controller4.title = "Linux"
         controllerArray.append(controller4)
         
-        var parameters: [CAPSPageMenuOption] = [
+        let parameters: [CAPSPageMenuOption] = [
             .ScrollMenuBackgroundColor(UIColor(red: 30.0/255.0, green: 30.0/255.0, blue: 30.0/255.0, alpha: 1.0)),
             .ViewBackgroundColor(UIColor(red: 20.0/255.0, green: 20.0/255.0, blue: 20.0/255.0, alpha: 1.0)),
             .SelectionIndicatorColor(UIColor.orangeColor()),
             .BottomMenuHairlineColor(UIColor(red: 70.0/255.0, green: 70.0/255.0, blue: 80.0/255.0, alpha: 1.0)),
             .MenuItemFont(UIFont(name: "HelveticaNeue", size: 13.0)!),
-            .MenuHeight(80.0),
+            .MenuHeight(30.0),
             .MenuItemWidth(90.0),
+            .MenuMargin(0),
             .CenterMenuItems(true)
         ]
         

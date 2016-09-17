@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class TableViewController: UIViewController {
 
@@ -14,6 +15,13 @@ class TableViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        Alamofire.request(.GET, fetchFrom).responseObject("responseData") { (response: Alamofire.Response<FeedResponse, NSError>) in
+            guard let entries = response.result.value?.feed?.entries else {
+                return
+            }
+            
+            print(entries)
     }
 
     override func didReceiveMemoryWarning() {

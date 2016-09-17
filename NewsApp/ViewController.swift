@@ -11,6 +11,26 @@ import UIKit
 class ViewController: UIViewController {
     
     var pageMenu: CAPSPageMenu?
+    
+    var feeds: [Dictionary<String, String>] =
+        [
+            [
+                "link": "https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&q=http://menthas.com/top/rss",
+                "title": "top"
+            ],
+            [
+                "link": "https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&q=http://menthas.com/ruby/rss",
+                "title": "ruby"
+            ],
+            [
+                "link": "https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&q=http://menthas.com/ios/rss",
+                "title": "ios"
+            ],
+            [
+                "link": "https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&q=http://menthas.com/infrastructure/rss",
+                "title": "infrastructure"
+            ],
+        ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +68,7 @@ class ViewController: UIViewController {
             .BottomMenuHairlineColor(UIColor(red: 70.0/255.0, green: 70.0/255.0, blue: 80.0/255.0, alpha: 1.0)),
             .MenuItemFont(UIFont(name: "HelveticaNeue", size: 13.0)!),
             .MenuHeight(30.0),
-            .MenuItemWidth(90.0),
+            .MenuItemWidth(120.0),
             .MenuMargin(0),
             .CenterMenuItems(true)
         ]
@@ -59,7 +79,6 @@ class ViewController: UIViewController {
         self.view.addSubview(pageMenu!.view)
         
         pageMenu!.didMoveToParentViewController(self)
-        
     }
 
     override func didReceiveMemoryWarning() {
